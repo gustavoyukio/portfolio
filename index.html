@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Estilo -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Script -->
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="assets/js/libs/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+    
+</head>
+
+<body>
+
+<div class="wrapper" class='w960'>
+    <!-- top -->
+    <header id="top">
+        <!-- is home -->
+        <h1 id="logo">Logo <img src="assets/img/" alt=""></h1>
+        <!-- else 
+        <h4 id="logo">Logo <img src="" alt=""></h4>
+        -->
+
+        <!--  -->
+        <nav role="navigation">
+            <ol id="principal">
+                <li><a href="#" title="">item</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <!-- Setting Grid -->
+    <div id="main" role="main">
+        
+        <?php 
+            if( $path[0] == 'home' ){
+                // Banners tela Inicial
+                echo $this->element('banners/home');
+            }else{
+                // Echo Alguma coisa aqui
+            }
+        ?>
+        
+        <section class='row fix conhecimentos'>
+            <h3> Conhecimentos </h3>
+            <article class="c3">
+                <h4 class='t1'> <i class='icon front'>&nbsp;</i> Front End </h4>
+                <p> Desenvolvimento Web em relação, com design moderno e inovador, com uso de novas técnologias e de acordo com o SEO e google friendly </p>
+            </article>
+            <article class="c3">
+                <h4 class='t2'> <i class='icon front'>&nbsp;</i> Back End </h4>
+                <p> Criação de Admins e uso de linguagens e frameworks, para integrar seu site com banco de dados, para agilizar  e facilitar as mudanças no site.</p>
+            </article>
+            <article class="c3">
+                <h4 class='t3'> <i class='icon front'>&nbsp;</i> Desempenho </h4>
+                <p> Uso de <strong> Javascript </strong> e <strong> Media Queries </strong> afim de deixar o ambiente do site e do admin mais amigável, fácil e intuitivo de se navegar ou trabalhar.</p>
+            </article>
+            <article class="c3">
+                <h4 class='t4'> <i class='icon front'>&nbsp;</i> Soluções </h4>
+                <p> Com os diferentes produtos que existem nos mercados, busco sempre criar Sites e Aplicações para ser <strong>cross-browser</strong> e <strong> responsivos </strong>.</p>
+            </article>            
+        </section>
+        
+        <section class='row fix projetos'>
+            <h3> Últimos Projetos </h3>
+
+            <article class="c3 no-pad"> 
+                <figure>
+                    <img src='assets/img/erico.png'>
+                    <figcaption>
+                        <h5> Norobras Impermeabilizadora </h5>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="c3 no-pad"> 
+                <figure>
+                    <img src='assets/img/koyama.png' style=''>
+                    <figcaption>
+                        <h5> Koyama Imóveis </h5>
+                    </figcaption>
+                </figure>
+            </article>            
+            <article class="c3 no-pad"> 
+                <figure>
+                    <img src=''>
+                    <figcaption>
+                        <h5> Departamento Científico FMUsp </h5>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="c3 no-pad"> 
+                <figure>
+                    <img src=''>
+                    <figcaption>
+                        <h5> PraValer </h5>
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+        
+        <section class='row fix brand'>
+            <h3> Projetos Importantes </h3>
+            <ul>
+                <li>Sadia/ BRF</li>
+                <li>Koyama Imóveis</li>
+                <li>Pravaler</li>
+                <li>UABMotors</li>
+                <li>CRN</li>
+                <li>Contax</li>
+                <br class='clear' />
+            </ul>
+        </section>
+    </div>
+
+</div>
+
+<footer id="footer">
+    <section class="wrapper row fix">
+        <article class='c3 s1'>
+            <h6> Contato: </h6>
+            <ul>
+                <li>
+                    <span class='i i-email'></span> gustavoyukio@gmail.com
+                </li>
+                <li>
+                    <span class='i i-telefone'></span> (11) 9 8544-0621
+                </li>
+                <li>
+                    <span class='i i-skype'></span> gustavo,yukio
+                </li>
+            <ul>
+        </article>
+        <article class='c3 s1'>
+            <h6> Mapa do Site: </h6>
+            <ul>
+                <li>
+                    <a href=''> Início </a>
+                </li>
+                <li>
+                    <a href=''> Conhecimentos </a>
+                </li>
+                <li>
+                    <a href=''> Projetos </a>
+                </li>
+                <li>
+                    <a href=''> Contato </a>
+                </li>
+            <ul>            
+        </article>
+        <article class='c3 s1'>
+            <h6> Mídia Sociais: </h6>
+            <ul>
+                <li>
+                    <a href=''> Facebook </a>
+                </li>
+                <li>
+                    <a href=''> Twitter </a>
+                </li>
+                <li>
+                    <a href=''> LinkedIn </a>
+                </li>
+            <ul>            
+        </article>
+        <article class='c4'>
+            
+        </article>
+    </section>
+</footer>
+
+    
+<!-- Scripts -->
+<script>navigator.userAgent.match("MSIE")&&document.write('<script src="assets/js/libs/jquery-1.9.1.min.js"><\/script>')||document.write('<script src="assets/js/libs/jquery-2.0.2.min.js"><\/script>');</script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
