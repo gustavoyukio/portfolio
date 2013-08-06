@@ -6,6 +6,7 @@
 
 // Vars
 @font: 'Roboto Condensed', sans-serif;
+@font2: 'Doppio One', sans-serif;
 
 .font(@fstyle, @fsize) {
     font: @fstyle @fsize @font;
@@ -41,7 +42,18 @@
     -moz-transition: @transition;
     -webkit-transition: @transition;
 }
-
+.bred(){
+    border: 1px solid red;
+}
+/* Mixin */
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
 /* ==========================================================================
    HTML5 Boilerplate - $Normilitzr
 ========================================================================== */
@@ -446,11 +458,72 @@ body{
     font-size: 14px;
 }
 /*=======================================================
+    HeaDers
+========================================================*/
+.header{
+    min-height: 0;
+    padding: 0;
+}
+#top{
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#logo{
+    float: left;
+    font-size: 0;
+}
+#logo img{
+    height: 100px;
+    width: 250px;
+}
+nav[role='navigation']{
+    float: right;
+    height: 100px;
+    line-height: 100px;
+}
+#principal{
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    overflow: hidden;
+}
+#principal li{
+    display: inline-block;
+    margin: 0 10px;
+}
+#principal li a{
+    background-color: #DBE0EA;
+    border-bottom: 1px solid #cdcfd2;
+    border-right: 1px solid #e9ebee;
+    border-left: 1px solid #e9ebee;
+    border-top: 1px solid #fff;
+    border-radius: 6px;
+    color: #444751;
+    font-family: @font2;
+    .gradient(top, #f4f5f7, #e1e5e8);
+    padding: .3em .7em;
+    text-decoration: none;
+    .transition( all .5s ease);
+}
+#principal li a:hover, #principal .active{
+    color: white;
+    border: 1px solid #26272d;
+    .gradient( top, #41444d, #41444d);
+    .transition( all .1s ease);
+}
+/*=======================================================
+    Banners
+========================================================*/
+.banners{
+    border: 1px solid red;
+    margin: 0;
+    min-height: 300px;
+}
+/*=======================================================
     Conhecimentos
 ========================================================*/
 .conhecimentos{
     margin-bottom: 75px;
-    padding: 40px;
 }
 h3{
     font-size: 0px;
@@ -481,11 +554,14 @@ h3{
     color: red;
 }
 .projetos figure img{
+    border:1px solid #aeaeae;
+    border-bottom: 0;
     height: 150px; 
-    width: 220px;
+    width: 100%;
 }
 .projetos figure figcaption h5{
     background-color: #F0F0F0;
+    border:0;
     margin: 0;
     padding: 0;
     height: 1px;
@@ -493,10 +569,13 @@ h3{
     color: #8B0000;
 }
 .projetos figure:hover figcaption h5{
+    border: 1px solid #aeaeae;
+    border-top: 0;
     height: 40px;
     padding: 10px 0;
     .transition( all .5s ease .2s );
 }
+
 /*======================================================
     Brands
 =========================================================*/
