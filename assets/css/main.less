@@ -4,7 +4,7 @@
 * $Grids
 ========================================================================== */
 
-// Vars
+//////// Vars
 @font: 'Roboto Condensed', sans-serif;
 @font2: 'Doppio One', sans-serif;
 
@@ -70,11 +70,11 @@ textarea {
 
 * {
     .box-size(border-box);
-    // -webkit-transition: all .25s ease-in;
-    //    -moz-transition: all .25s ease-in;
-    //     -ms-transition: all .25s ease-in;
-    //      -o-transition: all .25s ease-in;
-    //         transition: all .25s ease-in;
+    //////// -webkit-transition: all .25s ease-in;
+    ////////    -moz-transition: all .25s ease-in;
+    ////////     -ms-transition: all .25s ease-in;
+    ////////      -o-transition: all .25s ease-in;
+    ////////         transition: all .25s ease-in;
 }
 
 body {
@@ -123,6 +123,9 @@ textarea {
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+p{
+    margin: 0;
 }
 
 
@@ -209,7 +212,7 @@ footer {
     position:relative
 }
 
-// Spaces
+//////// Spaces
 .s1{margin-left:8.33%}
 .s2{margin-left:16.66%}
 .s3{margin-left:25%}
@@ -462,10 +465,13 @@ footer {
     padding: 0 !important;
 }
 body{
-    background-color:#dce1e4;
+    background-color:#fff;
     font-family: @font;
     color: #444751;
     font-size: 14px;
+}
+section{
+    padding: 0 10%;
 }
 /*=======================================================
     HeaDers
@@ -526,14 +532,16 @@ nav[role='navigation']{
 ========================================================*/
 .banners{
     margin: 0;
-    min-height: 300px;
-    background: red;
+    min-height: 400px;
 }
 /*=======================================================
     Conhecimentos
+        Icons
 ========================================================*/
 .conhecimentos{
-    margin-bottom: 75px;
+    padding: 3em 10%;
+    .gradient( top, #27ACCD, #1373C0);
+    color: white;
 }
 h3{
     font-size: 0px;
@@ -543,14 +551,36 @@ h3{
     padding: 0 -10px;
 }
 .conhecimentos h4{
-    font-size: 200%;
+    font-size: 250%;
     margin: 0;
     padding-bottom: 0;
-
+    line-height: 60px;
+    font-weight: normal;
 }
-.conhecimentos p{
-    margin: 0;
+.conhec.conhecimentos p{
+    margin: -5px;
 }
+    /*======================
+        Icons
+    ======================*/
+    .conhecimentos .icon{
+        min-height: 60px;
+        width: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+    .conhecimentos .left-1{
+        background: url(../img/icon_1l.png) no-repeat;
+    }
+    .conhecimentos .left-2{
+        background: url(../img/icon_2l.png) no-repeat;
+    }
+    .conhecimentos .left-3{
+        background: url(../img/icon_shade.png) no-repeat;
+    }
+    .conhecimentos .left-4{
+        background: url(../img/icon_over.png) no-repeat;
+    }    
 /*=======================================================
     Projetos
 ========================================================*/
@@ -559,7 +589,8 @@ h3{
     overflow: hidden;
 }
 .projetos h3{
-    color: red;
+    color: :;
+    font-size: 200%;
 }
 .projetos figure img{
     border:1px solid #aeaeae;
@@ -568,27 +599,20 @@ h3{
     width: 100%;
 }
 .projetos figure figcaption h5{
-    background-color: #F0F0F0;
+    background-color: #fe6a27;
     border:0;
     margin: 0;
-    padding: 0;
-    height: 1px;
-    overflow: hidden;
-    color: #8B0000;
-}
-.projetos figure:hover figcaption h5{
-    border: 1px solid #aeaeae;
-    border-top: 0;
     height: 40px;
-    padding: 10px 0;
-    .transition( all .5s ease .2s );
+    line-height: 40px;
+    overflow: hidden;
+    color: #fff;
 }
 
 /*======================================================
     Brands
 =========================================================*/
 .brand ul{
-    background-color: #A0A0A0 ;
+    background-color: #FF9237 ;
     border:1px solid #f0f0f0;
     border-radius: 5px;
     padding: 0;
@@ -605,10 +629,8 @@ h3{
     Footer
 =========================================================*/
 footer{
-    background: url(../img/footer/bg.png) repeat-x;
-    background-color: #808080;
-    color: #000;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #222;
+    color: #fff;
     border-bottom: 4px solid #222;
 }
 footer .wrapper{
