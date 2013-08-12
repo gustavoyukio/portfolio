@@ -54,6 +54,14 @@
     background-image: -ms-linear-gradient(@origin, @start, @stop);
     background-image: linear-gradient(@origin, @start, @stop);
 }
+.gradient2 (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, 10% @stop);
+    background-image: -moz-linear-gradient(@origin, @start, 10% @stop);
+    background-image: -o-linear-gradient(@origin, @start, 10% @stop);
+    background-image: -ms-linear-gradient(@origin, @start, 10% @stop);
+    background-image: linear-gradient(@origin, @start, 10% @stop);
+}
 /* ==========================================================================
    HTML5 Boilerplate - $Normilitzr
 ========================================================================== */
@@ -498,34 +506,36 @@ nav[role='navigation']{
     line-height: 100px;
 }
 #principal{
+    display: block;
     list-style: none;
+    height: 100px;
     margin: 0;
     padding: 0 20px;
     overflow: hidden;
 }
 #principal li{
     display: inline-block;
-    margin: 0 10px;
+    padding: 0 15px;
+    color: #222;
+}
+#principal li:hover{
+    .gradient(top, #FEAF38, #fff);
+}
+#principal .midia{
+    padding-top: 10px;
+    background-image: none;
+    background-color: #fff !important;
+}
+#principal .active{
+    .gradient(top, #FEAF38, #fff);   
+}
+#principal .midia p{
+    line-height: 15px;
 }
 #principal li a{
-    background-color: #DBE0EA;
-    border-bottom: 1px solid #cdcfd2;
-    border-right: 1px solid #e9ebee;
-    border-left: 1px solid #e9ebee;
-    border-top: 1px solid #fff;
-    border-radius: 6px;
-    color: #444751;
-    font-family: @font2;
-    .gradient(top, #f4f5f7, #e1e5e8);
-    padding: .3em .7em;
-    text-decoration: none;
-    .transition( all .5s ease);
-}
-#principal li a:hover, #principal .active{
     color: white;
-    border: 1px solid #26272d;
-    .gradient( top, #41444d, #41444d);
-    .transition( all .1s ease);
+    background-color: transparent;
+    background-image: none;
 }
 /*=======================================================
     Banners
@@ -649,4 +659,7 @@ footer ul {
 }
 footer ul li{
     text-align: left;
+}
+footer ul li a{
+    color: #BA0919;
 }
