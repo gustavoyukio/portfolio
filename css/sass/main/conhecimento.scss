@@ -1,0 +1,10 @@
+div[role="main"] {
+	.knowledge {
+		h2 {
+			text-align: center;
+		}
+		.items {
+			@extend .wrapper;
+		}
+	}
+}
