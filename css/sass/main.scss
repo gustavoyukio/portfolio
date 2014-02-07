@@ -14,6 +14,7 @@
  *******************************************************************************/
  @import "start/web-fonts";
  @include web-font((Open Sans));
+ @import "start/icomoon";
  @import "start/reset.sass";
  @import "start/variables";
  @import "start/mixins";
@@ -34,3 +35,4 @@
  @import "main/main";
  @import "main/intro";
  @import "main/conhecimento";
+ @import "main/cases";

@@ -1,10 +1,134 @@
 div[role="main"] {
+	color: #777;
 	.knowledge {
 		h2 {
 			text-align: center;
 		}
 		.items {
 			@extend .wrapper;
+			@extend .clear-fix;
+			margin-top: 3.5em;
+			article {
+				text-align: center;
+				display: block;
+				float: left;
+				width: 33%;
+				
+				span {
+					border-radius: 90px;
+					border:1px solid #ff11fc;
+					font: {
+						size: 78px;
+					}
+					padding: .5em;
+					margin: 0 auto;
+					display: block;
+					width: 45%;
+					color:  #890988;
+				}
+				h3 {
+					font: {
+						size: 28px;
+					}
+					margin: .5em;
+				}
+				p {
+					margin: 0 2.3em;
+				}
+			}
+			.first {
+				span {
+					background-color: #c80dc6;
+				}
+			}
+			.second {
+				span {
+					background-color: #e70fe5;
+				}
+			}
+			.third {
+				span {
+					background-color: #fd10fa;
+				}
+			}
+			&:hover {
+				article {
+					@include transition(opacity,.2s,0,ease);
+					opacity: .3;
+					&:hover {
+						opacity: 1;
+					}				
+				}
+			}
+			&:after {
+				@extend .clear-fix;
+				content: " ";
+				display: block;
+			}
+		}
+
+		.list-types{
+			@extend .clear-fix;
+			background-color: #9fff4a;
+			//background-color: #08ffb6;
+			margin-top: 3em;
+			padding: 1em;
+			//color: #ecef00;
+			//color: #dfefd8;
+			color: #257900;
+			div{
+				@extend .wrapper;
+				ul {
+					display: block;
+					float: left;
+					width: 32%;
+					text-align: center;
+					li {
+						margin-top: 10px;
+						text-align: left;
+						padding-left: 50px;
+						progress {  
+						    background-color: #fff; 
+						    border: 0;  
+						    height: 18px;  
+						    border-radius: 9px;
+						    overflow: hidden;
+						    margin-left: 1em;
+						    border:1px solid #13A000;
+						    float: right;
+						    margin-right: 20px;
+						}  
+						progress::-webkit-progress-bar {  
+						    background-color: #fff; 
+						    border: 0;  
+						    height: 18px;  
+						    border-radius: 9px; 
+						    overflow: hidden;
+						    border:1px solid #13A000;
+						    float: right;
+						}  
+						progress::-webkit-progress-value {  
+						    background-color: #69E000;
+						}  
+						progress::-moz-progress-bar {  
+						    background-color: #fff; 
+						    border: 0;  
+						    height: 18px;  
+						    border-radius: 9px;
+						    overflow: hidden;
+						    margin-left: 1em;
+						    border:1px solid #13A000;
+						    float: right;
+						    margin-right: 20px;
+						}  
+					}
+				}
+				&:after {
+					@extend .clear-fix;
+					content: " ";
+					display: block;
+				}
+			}
 		}
 	}
 }
