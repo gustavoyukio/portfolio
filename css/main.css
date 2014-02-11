@@ -359,9 +359,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html, body {
-  height: 100%; }
-
 /*******************************************************************************
  * Variaveis
  * - Colors
@@ -388,7 +385,7 @@ html, body {
   width: 80%;
   margin: 0 auto; }
 
-.clear-fix, div[role="main"] .knowledge .items, div[role="main"] .knowledge .items:after, div[role="main"] .knowledge .list-types, div[role="main"] .knowledge .list-types div:after, .cases article ul:after {
+.clear-fix, div[role="main"]:after, div[role="main"] .knowledge .items, div[role="main"] .knowledge .items:after, div[role="main"] .knowledge .list-types, div[role="main"] .knowledge .list-types div:after, footer {
   clear: both; }
 
 /*******************************************************************************
@@ -457,8 +454,12 @@ header {
  * - intro
  * - Conhecimentos
  *******************************************************************************/
+html,
+body {
+  min-height: 100%; }
+
 div[role="main"] {
-  height: 100%; }
+  min-height: 100%; }
   div[role="main"] .intro {
     background-color: #55606a;
     height: 100%;
@@ -486,6 +487,9 @@ div[role="main"] {
         vertical-align: middle;
         font-size: 32px;
         font-style: italic; }
+  div[role="main"]:after {
+    content: " ";
+    display: block; }
 
 div[role="main"] {
   color: #777; }
@@ -578,6 +582,9 @@ div[role="main"] {
       content: " ";
       display: block; }
 
+* {
+  box-sizing: border-box; }
+
 .cases {
   color: #16454e;
   border-top: 1px solid #777;
@@ -592,56 +599,48 @@ div[role="main"] {
     .cases article ul {
       margin-top: 2em; }
       .cases article ul li {
-        display: block;
-        float: left;
+        display: inline-block;
         width: 30%;
-        border: 1px solid blue;
-        margin: 1em;
-        height: 175px;
-        color: transparent;
-        position: relative;
+        height: 185px;
+        border: 1px solid #333;
+        margin: 1em .6em;
         overflow: hidden;
-        transition: all 0.5s 0 ease;
-        -o-transition: all 0.5s 0 ease;
-        -ms-transition: all 0.5s 0 ease;
-        -moz-transition: all 0.5s 0 ease;
-        -webkit-transition: all 0.5s 0 ease; }
-        .cases article ul li h3 {
-          position: absolute;
-          color: transparent;
-          height: 25px;
-          z-index: 2;
-          width: 100%;
-          line-height: 25px;
-          transition: all 0.2s 0 ease;
-          -o-transition: all 0.2s 0 ease;
-          -ms-transition: all 0.2s 0 ease;
-          -moz-transition: all 0.2s 0 ease;
-          -webkit-transition: all 0.2s 0 ease; }
-        .cases article ul li img {
-          position: absolute;
-          z-index: 1;
-          height: 175px;
-          width: 50%; }
-        .cases article ul li p {
-          z-index: 2;
-          position: absolute;
-          top: 100%;
-          width: 100%;
-          height: 150px;
-          transition: all 0.6s 0 cubic-bezier(0.32, 3, 0.79, 0.38);
-          -o-transition: all 0.6s 0 cubic-bezier(0.32, 3, 0.79, 0.38);
-          -ms-transition: all 0.6s 0 cubic-bezier(0.32, 3, 0.79, 0.38);
-          -moz-transition: all 0.6s 0 cubic-bezier(0.32, 3, 0.79, 0.38);
-          -webkit-transition: all 0.6s 0 cubic-bezier(0.32, 3, 0.79, 0.38);
-          background-color: rgba(0, 0, 0, 0.5);
-          color: #f8f8f8;
-          padding: 1em;
-          font-weight: bold; }
-        .cases article ul li:hover h3 {
-          color: #16454e; }
-        .cases article ul li:hover p {
-          top: 25px; }
-      .cases article ul:after {
-        content: " ";
-        display: block; }
+        border-radius: 2px; }
+        .cases article ul li figure {
+          background: #3c96a9;
+          height: 173px;
+          margin: 5px;
+          overflow: hidden;
+          position: relative;
+          -webkit-box-shadow: 0 0 0 1px #dcd3c4, 2px 2px 2px rgba(0, 0, 0, 0.1);
+          -webkit-transition: all 0.3s ease-in-out;
+          width: 97%; }
+          .cases article ul li figure img {
+            top: 0%;
+            position: absolute;
+            left: 0;
+            -webkit-transition: inherit;
+            height: 173px;
+            overflow: hidden; }
+          .cases article ul li figure figcaption {
+            position: absolute;
+            top: 100%;
+            -webkit-transition: inherit;
+            padding: .7em;
+            font-size: 100%;
+            font-weight: bold;
+            width: 100%;
+            padding-top: 30px; }
+            .cases article ul li figure figcaption h3 {
+              color: #f8f8f8;
+              font-size: 130%;
+              margin-bottom: 15px; }
+        .cases article ul li:hover figure img {
+          top: -100%; }
+        .cases article ul li:hover figure figcaption {
+          top: 0; }
+
+/*******************************************************************************
+ * Footer
+ * - main
+ *******************************************************************************/

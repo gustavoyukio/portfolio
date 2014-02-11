@@ -1,3 +1,6 @@
+*{
+	box-sizing: border-box;
+}
 .cases {
 	@extend .wrapper;
 	color: #16454e;
@@ -16,58 +19,60 @@
 		ul{
 			margin-top: 2em;
 			li{
-				display: block;
-				float: left;
+				display: inline-block;
 				width: 30%;
-				border:1px solid blue;
-				margin: 1em;
-				height: 175px;
-				color: transparent;
-				position: relative;
+				height: 185px;
+				border: 1px solid #333;
+				margin: 1em .6em;
 				overflow: hidden;
-				@include transition(all,.5s,0,ease);
-				h3{
-					position: absolute;
-					color: transparent;
-					height: 25px;
-					z-index: 2;
-					width: 100%;
-					line-height: 25px;
-					@include transition(all,.2s,0,ease);
-				}
-				img{
-					position: absolute;
-					z-index: 1;
-					height: 175px;
-					width: 50%;
-				}
-				p {
-					z-index: 2;
-					position: absolute;
-					top: 100%;
-					width: 100%;
-					height: 150px;
-					@include transition(all,.6s,0,cubic-bezier(.32,3,.79,.38));
-					background-color: rgba(0,0,0,0.5);
-					color: #f8f8f8;
-					padding: 1em;
-					font: {
-						weight: bold;
+				border-radius: 2px;
+				figure {
+					background: #3c96a9;
+					height: 173px;
+					margin: 5px;
+					overflow: hidden;
+					position: relative;
+					-webkit-box-shadow: 0 0 0 1px #dcd3c4, 2px 2px 2px rgba(0,0,0,.1);
+					-webkit-transition: all 0.3s ease-in-out;
+					width: 97%;
+					img {
+						top: 0%;
+						position: absolute;
+						left: 0;
+						-webkit-transition: inherit;
+						height: 173px;
+						overflow: hidden;
+					}
+					figcaption {
+						position: absolute;
+						top: 100%;
+						-webkit-transition: inherit;
+						padding: .7em;
+						font: {
+							size: 100%;
+							weight: bold;
+						}
+						width: 100%;
+						padding-top: 30px;
+						h3 {
+							color: #f8f8f8;
+							font: {
+								size: 130%;
+							}
+							margin-bottom: 15px;
+						}
 					}
 				}
 				&:hover {
-					h3 {
-						color: #16454e;
-					}
-					p {
-						top: 25px;
+					figure {
+						img {
+							top: -100%;
+						}
+						figcaption {
+							top: 0;
+						}
 					}
 				}
-			}
-			&:after {
-				@extend .clear-fix;
-				content: " ";
-				display: block;
 			}
 		}
 	}
