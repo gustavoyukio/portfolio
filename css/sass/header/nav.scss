@@ -1,0 +1,65 @@
+header {
+	height: 100px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	background-color: #fff;
+	@include box-shadow(0,0,10px,10px, rgba(0,0,0,0.4));
+	h1{
+		font: {
+			size: 0;
+			weight: bold;
+		}
+		a {
+			img {
+				
+			}
+		}
+	}
+	nav{
+		float: right;
+		margin-right: 5%;
+		line-height: 100px;
+		height: 100px;
+		ul {
+			padding: 0;
+			margin: 0;
+			li{
+				display: block;
+				float: left;
+				text-align: center;
+				a {
+					width: 100%;
+					display: block;
+					text-decoration: none;
+					padding: 0 1.5em;
+					color: $fundo;
+					position: relative;
+					&:hover {	
+						color: #681603;
+						span {
+							height: 30px;
+						}
+					}
+					span {
+						position: absolute;
+						top: 0;
+						height: 0;
+						background-color: $nav-bor-top;
+						z-index: 15px;
+						width: 100%;
+						left: 0;
+						@include transition(all, .5s, 0, ease);
+					}
+				}
+				.active {
+					span {
+						height: 10px;
+					}
+				}
+				
+			}
+		}
+	}
+}

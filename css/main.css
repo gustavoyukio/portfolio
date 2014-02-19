@@ -1,0 +1,646 @@
+/*******************************************************************************
+ * Index
+ * - imports
+ * - header
+ * - Main
+ * - footer
+ *******************************************************************************/
+/*******************************************************************************
+ * Imports
+ * - Fonts 
+ * - Reset
+ * - Variables
+ *******************************************************************************/
+/*
+ * This is a fairly big mixin.
+ * The reason for this is that at the time of writing (09/01/2013),
+ * Sass does not include functions for substring or find/replace in string.
+ * Chris Eppstein sent a Pull Request to Sass with the str-extract (substring) function back in June,
+ * but it still has not been merged, due to lack of minor comments.
+ * That was five months ago.
+ */
+@import url(http://fonts.googleapis.com/css?family=Open|Sans);
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-u4d9wv");
+  src: url("fonts/icomoon.eot?#iefix-u4d9wv") format("embedded-opentype"), url("fonts/icomoon.woff?-u4d9wv") format("woff"), url("fonts/icomoon.ttf?-u4d9wv") format("truetype"), url("fonts/icomoon.svg?-u4d9wv#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-tree:before {
+  content: "\e600"; }
+
+.icon-headphones:before {
+  content: "\e601"; }
+
+.icon-images:before {
+  content: "\e602"; }
+
+.icon-pawn:before {
+  content: "\e603"; }
+
+.icon-pencil:before {
+  content: "\e604"; }
+
+.icon-profile:before {
+  content: "\e605"; }
+
+.icon-stack:before {
+  content: "\e606"; }
+
+.icon-support:before {
+  content: "\e607"; }
+
+.icon-map:before {
+  content: "\e608"; }
+
+.icon-screen:before {
+  content: "\e609"; }
+
+.icon-mobile:before {
+  content: "\e60a"; }
+
+.icon-tablet:before {
+  content: "\e60b"; }
+
+.icon-download:before {
+  content: "\e60c"; }
+
+.icon-flip:before {
+  content: "\e60d"; }
+
+.icon-user:before {
+  content: "\e60e"; }
+
+.icon-user2:before {
+  content: "\e60f"; }
+
+.icon-user3:before {
+  content: "\e610"; }
+
+.icon-quotes-left:before {
+  content: "\e611"; }
+
+.icon-contract:before {
+  content: "\e612"; }
+
+.icon-binoculars:before {
+  content: "\e613"; }
+
+.icon-spinner:before {
+  content: "\e614"; }
+
+.icon-spinner2:before {
+  content: "\e615"; }
+
+.icon-spinner3:before {
+  content: "\e616"; }
+
+.icon-unlocked:before {
+  content: "\e617"; }
+
+.icon-key:before {
+  content: "\e618"; }
+
+.icon-lock:before {
+  content: "\e619"; }
+
+.icon-wrench:before {
+  content: "\e61a"; }
+
+.icon-cog:before {
+  content: "\e61b"; }
+
+.icon-cogs:before {
+  content: "\e61c"; }
+
+.icon-cog2:before {
+  content: "\e61d"; }
+
+.icon-aid:before {
+  content: "\e61e"; }
+
+.icon-pie:before {
+  content: "\e61f"; }
+
+.icon-bars:before {
+  content: "\e620"; }
+
+.icon-lab:before {
+  content: "\e621"; }
+
+.icon-checkmark:before {
+  content: "\e622"; }
+
+.icon-minus:before {
+  content: "\e623"; }
+
+.icon-plus:before {
+  content: "\e624"; }
+
+.icon-arrow-right:before {
+  content: "\e625"; }
+
+.icon-arrow-right2:before {
+  content: "\e626"; }
+
+.icon-arrow-left:before {
+  content: "\e627"; }
+
+.icon-arrow-left2:before {
+  content: "\e628"; }
+
+.icon-arrow-up:before {
+  content: "\e629"; }
+
+.icon-arrow-up-right:before {
+  content: "\e62a"; }
+
+.icon-arrow-down-right:before {
+  content: "\e62b"; }
+
+.icon-arrow-down:before {
+  content: "\e62c"; }
+
+.icon-arrow-down-left:before {
+  content: "\e62d"; }
+
+.icon-arrow-up-left:before {
+  content: "\e62e"; }
+
+.icon-arrow-up2:before {
+  content: "\e62f"; }
+
+.icon-arrow-up-right2:before {
+  content: "\e630"; }
+
+.icon-arrow-right3:before {
+  content: "\e631"; }
+
+.icon-arrow-down-right2:before {
+  content: "\e632"; }
+
+.icon-arrow-down2:before {
+  content: "\e633"; }
+
+.icon-arrow-down-left2:before {
+  content: "\e634"; }
+
+.icon-arrow-left3:before {
+  content: "\e635"; }
+
+.icon-arrow-down-right3:before {
+  content: "\e636"; }
+
+.icon-arrow-up-right3:before {
+  content: "\e637"; }
+
+.icon-arrow-up3:before {
+  content: "\e638"; }
+
+.icon-arrow-up-left2:before {
+  content: "\e639"; }
+
+.icon-arrow-down-left3:before {
+  content: "\e63a"; }
+
+.icon-arrow-down3:before {
+  content: "\e63b"; }
+
+.icon-checkbox-checked:before {
+  content: "\e63c"; }
+
+.icon-checkbox-unchecked:before {
+  content: "\e63d"; }
+
+.icon-pilcrow:before {
+  content: "\e63e"; }
+
+.icon-embed:before {
+  content: "\e63f"; }
+
+.icon-code:before {
+  content: "\e640"; }
+
+.icon-share:before {
+  content: "\e641"; }
+
+.icon-google-plus:before {
+  content: "\e642"; }
+
+.icon-facebook:before {
+  content: "\e643"; }
+
+.icon-twitter:before {
+  content: "\e644"; }
+
+.icon-feed:before {
+  content: "\e645"; }
+
+.icon-github:before {
+  content: "\e646"; }
+
+.icon-tux:before {
+  content: "\e647"; }
+
+.icon-html5:before {
+  content: "\e648"; }
+
+.icon-html52:before {
+  content: "\e649"; }
+
+.icon-quote:before {
+  content: "\e64a"; }
+
+.icon-link:before {
+  content: "\e64b"; }
+
+.icon-keyboard:before {
+  content: "\e64c"; }
+
+.icon-uniE64D:before {
+  content: "\e64d"; }
+
+.icon-arrow-up4:before {
+  content: "\e64e"; }
+
+.icon-arrow-down4:before {
+  content: "\e64f"; }
+
+.icon-arrow-left4:before {
+  content: "\e650"; }
+
+.icon-arrow-right4:before {
+  content: "\e651"; }
+
+.icon-arrow-up5:before {
+  content: "\e652"; }
+
+.icon-arrow-down5:before {
+  content: "\e653"; }
+
+.icon-arrow-left5:before {
+  content: "\e654"; }
+
+.icon-arrow-right5:before {
+  content: "\e655"; }
+
+.icon-arrow-up6:before {
+  content: "\e656"; }
+
+.icon-arrow-down6:before {
+  content: "\e657"; }
+
+.icon-arrow-left6:before {
+  content: "\e658"; }
+
+.icon-flow-tree:before {
+  content: "\e659"; }
+
+.icon-flow-branch:before {
+  content: "\e65a"; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Open Sans";
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*******************************************************************************
+ * Variaveis
+ * - Colors
+ * Classes
+ *******************************************************************************/
+/*******************************************************************************
+ * Colors
+ * - background
+ * - fundo
+ * - nav
+ *******************************************************************************/
+/*******************************************************************************
+ * Fundo
+ *******************************************************************************/
+/*******************************************************************************
+ * - nav
+ *******************************************************************************/
+/*******************************************************************************
+ * Classes
+ * - Wrapper
+ * - Clear Fix
+ *******************************************************************************/
+.wrapper, div[role="main"] .knowledge .items, div[role="main"] .knowledge .list-types div, .cases {
+  width: 80%;
+  margin: 0 auto; }
+
+.clear-fix, div[role="main"]:after, div[role="main"] .knowledge .items, div[role="main"] .knowledge .items:after, div[role="main"] .knowledge .list-types, div[role="main"] .knowledge .list-types div:after, footer {
+  clear: both; }
+
+/*******************************************************************************
+ * Header
+ * - nav
+ * - logo
+ * - start-info
+ *******************************************************************************/
+header {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4); }
+  header h1 {
+    font-size: 0;
+    font-weight: bold; }
+  header nav {
+    float: right;
+    margin-right: 5%;
+    line-height: 100px;
+    height: 100px; }
+    header nav ul {
+      padding: 0;
+      margin: 0; }
+      header nav ul li {
+        display: block;
+        float: left;
+        text-align: center; }
+        header nav ul li a {
+          width: 100%;
+          display: block;
+          text-decoration: none;
+          padding: 0 1.5em;
+          color: #55606a;
+          position: relative; }
+          header nav ul li a:hover {
+            color: #681603; }
+            header nav ul li a:hover span {
+              height: 30px; }
+          header nav ul li a span {
+            position: absolute;
+            top: 0;
+            height: 0;
+            background-color: #ff3300;
+            z-index: 15px;
+            width: 100%;
+            left: 0;
+            transition: all 0.5s 0 ease;
+            -o-transition: all 0.5s 0 ease;
+            -ms-transition: all 0.5s 0 ease;
+            -moz-transition: all 0.5s 0 ease;
+            -webkit-transition: all 0.5s 0 ease; }
+        header nav ul li .active span {
+          height: 10px; }
+
+/*******************************************************************************
+ * Main 
+ * - Main
+ * - intro
+ * - Conhecimentos
+ *******************************************************************************/
+html,
+body {
+  min-height: 100%; }
+
+div[role="main"] {
+  min-height: 100%; }
+  div[role="main"] .intro {
+    background-color: #55606a;
+    height: 100%;
+    line-height: 100%;
+    z-index: 5;
+    padding-top: 100px;
+    width: 100%;
+    box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
+    -ms-box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px -10px 10px 10px rgba(0, 0, 0, 0.6); }
+    div[role="main"] .intro article {
+      display: table;
+      width: 100%;
+      line-height: 100%;
+      height: 100%; }
+      div[role="main"] .intro article h2 {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 100%;
+        color: #fff;
+        text-align: center;
+        margin: auto;
+        vertical-align: middle;
+        font-size: 32px;
+        font-style: italic; }
+  div[role="main"]:after {
+    content: " ";
+    display: block; }
+
+div[role="main"] {
+  color: #777; }
+  div[role="main"] .knowledge h2 {
+    text-align: center; }
+  div[role="main"] .knowledge .items {
+    margin-top: 3.5em; }
+    div[role="main"] .knowledge .items article {
+      text-align: center;
+      display: block;
+      float: left;
+      width: 33%; }
+      div[role="main"] .knowledge .items article span {
+        border-radius: 90px;
+        border: 1px solid #ff11fc;
+        font-size: 78px;
+        padding: .5em;
+        margin: 0 auto;
+        display: block;
+        width: 45%;
+        color: #890988; }
+      div[role="main"] .knowledge .items article h3 {
+        font-size: 28px;
+        margin: .5em; }
+      div[role="main"] .knowledge .items article p {
+        margin: 0 2.3em; }
+    div[role="main"] .knowledge .items .first span {
+      background-color: #c80dc6; }
+    div[role="main"] .knowledge .items .second span {
+      background-color: #e70fe5; }
+    div[role="main"] .knowledge .items .third span {
+      background-color: #fd10fa; }
+    div[role="main"] .knowledge .items:hover article {
+      transition: opacity 0.2s 0 ease;
+      -o-transition: opacity 0.2s 0 ease;
+      -ms-transition: opacity 0.2s 0 ease;
+      -moz-transition: opacity 0.2s 0 ease;
+      -webkit-transition: opacity 0.2s 0 ease;
+      opacity: .3; }
+      div[role="main"] .knowledge .items:hover article:hover {
+        opacity: 1; }
+    div[role="main"] .knowledge .items:after {
+      content: " ";
+      display: block; }
+  div[role="main"] .knowledge .list-types {
+    background-color: #9fff4a;
+    margin-top: 3em;
+    padding: 1em;
+    color: #257900; }
+    div[role="main"] .knowledge .list-types div ul {
+      display: block;
+      float: left;
+      width: 32%;
+      text-align: center; }
+      div[role="main"] .knowledge .list-types div ul li {
+        margin-top: 10px;
+        text-align: left;
+        padding-left: 50px; }
+        div[role="main"] .knowledge .list-types div ul li progress {
+          background-color: #fff;
+          border: 0;
+          height: 18px;
+          border-radius: 9px;
+          overflow: hidden;
+          margin-left: 1em;
+          border: 1px solid #13A000;
+          float: right;
+          margin-right: 20px; }
+        div[role="main"] .knowledge .list-types div ul li progress::-webkit-progress-bar {
+          background-color: #fff;
+          border: 0;
+          height: 18px;
+          border-radius: 9px;
+          overflow: hidden;
+          border: 1px solid #13A000;
+          float: right; }
+        div[role="main"] .knowledge .list-types div ul li progress::-webkit-progress-value {
+          background-color: #69E000; }
+        div[role="main"] .knowledge .list-types div ul li progress::-moz-progress-bar {
+          background-color: #fff;
+          border: 0;
+          height: 18px;
+          border-radius: 9px;
+          overflow: hidden;
+          margin-left: 1em;
+          border: 1px solid #13A000;
+          float: right;
+          margin-right: 20px; }
+    div[role="main"] .knowledge .list-types div:after {
+      content: " ";
+      display: block; }
+
+* {
+  box-sizing: border-box; }
+
+.cases {
+  color: #16454e;
+  border-top: 1px solid #777;
+  margin-top: 3em;
+  padding-top: 3em; }
+  .cases h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 32px; }
+  .cases article {
+    text-align: center; }
+    .cases article ul {
+      margin-top: 2em; }
+      .cases article ul li {
+        display: inline-block;
+        width: 30%;
+        height: 185px;
+        border: 1px solid #333;
+        margin: 1em .6em;
+        overflow: hidden;
+        border-radius: 2px; }
+        .cases article ul li figure {
+          background: #3c96a9;
+          height: 173px;
+          margin: 5px;
+          overflow: hidden;
+          position: relative;
+          -webkit-box-shadow: 0 0 0 1px #dcd3c4, 2px 2px 2px rgba(0, 0, 0, 0.1);
+          -webkit-transition: all 0.3s ease-in-out;
+          width: 97%; }
+          .cases article ul li figure img {
+            top: 0%;
+            position: absolute;
+            left: 0;
+            -webkit-transition: inherit;
+            height: 173px;
+            overflow: hidden; }
+          .cases article ul li figure figcaption {
+            position: absolute;
+            top: 100%;
+            -webkit-transition: inherit;
+            padding: .7em;
+            font-size: 100%;
+            font-weight: bold;
+            width: 100%;
+            padding-top: 30px; }
+            .cases article ul li figure figcaption h3 {
+              color: #f8f8f8;
+              font-size: 130%;
+              margin-bottom: 15px; }
+        .cases article ul li:hover figure img {
+          top: -100%; }
+        .cases article ul li:hover figure figcaption {
+          top: 0; }
+
+/*******************************************************************************
+ * Footer
+ * - main
+ *******************************************************************************/

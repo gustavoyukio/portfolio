@@ -1,0 +1,15 @@
+@mixin transition( $prop, $temp, $delay, $type){
+	transition: $prop $temp $delay $type;
+	-o-transition: $prop $temp $delay $type;
+	-ms-transition: $prop $temp $delay $type;
+	-moz-transition: $prop $temp $delay $type;
+	-webkit-transition: $prop $temp $delay $type;
+}
+
+@mixin box-shadow($a, $b, $c, $d, $e) {
+	box-shadow: $a $b $c $d $e;
+	-o-box-shadow: $a $b $c $d $e;
+	-ms-box-shadow: $a $b $c $d $e;
+	-moz-box-shadow: $a $b $c $d $e;
+	-webkit-box-shadow: $a $b $c $d $e;
+}
